@@ -9,17 +9,17 @@ import {Component, Input, Output, EventEmitter} from '@angular/core';
   <div>Date: {{event.date}}</div>
   <div>Time: {{event.time}}</div>
   <div>Price: {{event.price}}</div>
-</div>`
+  <div>
+    <span>Location: {{event.location.address}}</span>
+    <span class='pad-left'>Location: {{event.location.city}},
+      {{event.location.country}}
+    </span>
+  </div>
+</div>`,
+styles: [`
+          .pad-left {margin-left: 10px; }
+          .well div {color: #bbb;}`]
 })
 export class EventThumbnailComponent {
   @Input() event: any;
-
-  handleClick() {
-    alert('foo');
-    if (window.confirm("Are you sure?")) {
-      alert('yes chosen');
-    } else {
-      alert('no chosen');
-    }
-  }
 }

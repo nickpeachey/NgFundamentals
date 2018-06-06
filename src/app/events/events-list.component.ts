@@ -7,9 +7,7 @@ import {Component} from '@angular/core';
             <div>
             <h1>Upcoming Angular Events</h1>
             <hr/>
-            <event-thumbnail #thumbnail [event]="event1"></event-thumbnail>
-
-            <button class='btn btn-primary' (click)="thumbnail.handleClick()">Click!</button>
+            <event-thumbnail [event]="event1"></event-thumbnail>
           </div>`
 })
 export class EventsListComponent {
@@ -18,6 +16,11 @@ export class EventsListComponent {
     name: 'Angular Connect',
     date: '9/26/2036',
     time: '10:00 am',
-    price: 599.99
+    price: 599.99,
+    location: {
+      address: '12 Regent Street',
+      city: 'London',
+      country: 'England'
+    }
   };
 }
