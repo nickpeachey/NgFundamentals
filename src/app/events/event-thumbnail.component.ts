@@ -1,6 +1,7 @@
-import {Component, Input} from '@angular/core';
+import {Component, Input, Output, EventEmitter} from '@angular/core';
 
 @Component({
+  // tslint:disable-next-line:component-selector
   selector: 'event-thumbnail',
   template: `
   <div class="well hoverwell thumbnail">
@@ -12,4 +13,13 @@ import {Component, Input} from '@angular/core';
 })
 export class EventThumbnailComponent {
   @Input() event: any;
+
+  handleClick() {
+    alert('foo');
+    if (window.confirm("Are you sure?")) {
+      alert('yes chosen');
+    } else {
+      alert('no chosen');
+    }
+  }
 }
