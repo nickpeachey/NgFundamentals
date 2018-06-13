@@ -23,13 +23,13 @@ import {Component, Input } from '@angular/core';
   <button [ngStyle]="{'color': 'black'}" (click)="btnClicked()">Click!</button>
 </div>`,
 styles: [`
+          .thumbnail { min-height:210px;}
           .pad-left {margin-left: 10px; }
           .well div {color: #bbb;}`
         ]
 })
 export class EventThumbnailComponent {
   @Input() event: any;
-  @Input() events: any;
 
   btnClicked() {
     window.alert('alert shown');
